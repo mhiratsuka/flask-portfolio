@@ -1,0 +1,10 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+    <h2>{{title}}</h2>
+    {% for post in posts %}
+        <h3>{{post.workTitle}}</h3>
+        <p>{{post.skill}}</p>
+    {% endfor %}
+</body>
+{% endblock content %}
