@@ -7,23 +7,29 @@ from myportfolio.forms import RegistrationForm, LoginForm, UpdateAccountForm, Po
 from myportfolio.models import User, Post
 from flask_login import login_user, current_user, logout_user, login_required
  
+
 @app.route('/')
 @app.route('/home')
 def home():
     return render_template('home.html')
 
+
 @app.route('/work')
 def work():
-    posts = Post.query.all()
+    page =request.args.get('page', 1, type=int)
+    posts = Post.query.order_by(Post.date_posted.desc()).paginate(page=page, per_page=5)
     return render_template('work.html', title='Work', posts=posts)
+
 
 @app.route('/about')
 def about():
     return render_template('about.html', title='About')
 
+
 @app.route('/contact')
 def contact():
     return render_template('contact.html', title='Contact')
+
 
 @app.route('/register', methods=['GET', 'POST'])
 def register():
@@ -38,7 +44,8 @@ def register():
         flash('Your account has been created! You are now able to log in', 'success')
         return redirect(url_for('work'))
     return render_template('register.html', title='Register', form=form)
-    
+
+
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -54,10 +61,12 @@ def login():
             flash('Login unseccessful. Please check username and password', 'danger')
     return render_template('login.html', title='Login', form=form)
 
+
 @app.route('/logout')
 def logout():
     logout_user()
     return redirect(url_for('work'))
+
 
 def save_picture(form_picture):
     random_hex = secrets.token_hex(8)
@@ -105,10 +114,12 @@ def new_post():
         return redirect(url_for('work'))
     return render_template('create_post.html', title='New Post', form=form, legend='New Post')
 
+
 @app.route('/post/<int:post_id>')
 def post(post_id):
     post = Post.query.get_or_404(post_id)
     return render_template('post.html', title=post.worktitle, post=post)
+
 
 @app.route('/post/<int:post_id>/update', methods=['GET', 'POST'])
 @login_required
@@ -130,6 +141,7 @@ def update_post(post_id):
         form.content.data = post.content
     return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
 
+
 @app.route('/post/<int:post_id>/delete', methods=['POST'])
 @login_required
 def delete_post(post_id):
@@ -140,3 +152,13 @@ def delete_post(post_id):
     db.session.commit()
     flash('Your post has been deleted', 'success')
     return redirect(url_for('work'))
+
+
+@app.route('/user/<string:username>')
+def user_posts(username):
+    page =request.args.get('page', 1, type=int)
+    user = User.query.filter_by(username=username).first_or_404()
+    posts = Post.query.filter_by(author=user)\
+        .order_by(Post.date_posted.desc())\
+        .paginate(page=page, per_page=5)
+    return render_template('user_posts.html', posts=posts, user=user)
