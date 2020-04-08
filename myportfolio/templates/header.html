@@ -11,7 +11,14 @@
         <ul class="nav cf">
             <li class="work" ontouchstart=""><a href="{{url_for('work')}}">Work</a></li>
             <li class="about" ontouchstart=""><a href="{{url_for('about')}}">About</a></li>
-            <li class="contact" ontouchstart=""><a href="{{url_for('register')}}">Contact</a></li>
+            <li class="contact" ontouchstart=""><a href="{{url_for('contact')}}">Contact</a></li>
+            {%if current_user.is_authenticated %}
+                <li class="login" ontouchstart=""><a href="{{url_for('account')}}">Account</a></li>
+                <li class="login" ontouchstart=""><a href="{{url_for('logout')}}">Logout</a></li>
+            {% else %}
+                <li class="register" ontouchstart=""><a href="{{url_for('register')}}">Register</a></li>
+                <li class="login" ontouchstart=""><a href="{{url_for('login')}}">Login</a></li>
+            {% endif%}
         </ul>
     </nav>
 </header>
