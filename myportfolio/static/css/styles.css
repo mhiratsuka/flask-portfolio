@@ -20,6 +20,16 @@ a {
 	color: #fff;
 }
 
+/* TODO: improve later */
+.media-body { 
+	margin-top: 100px;
+}
+
+/* TODO: improve later */
+.modal { 
+	color: black;
+}
+
 header{
 	position: fixed;
 	top:0;

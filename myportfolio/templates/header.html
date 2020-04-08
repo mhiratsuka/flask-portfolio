@@ -13,6 +13,7 @@
             <li class="about" ontouchstart=""><a href="{{url_for('about')}}">About</a></li>
             <li class="contact" ontouchstart=""><a href="{{url_for('contact')}}">Contact</a></li>
             {%if current_user.is_authenticated %}
+                <li class="login" ontouchstart=""><a href="{{url_for('new_post')}}">New Post</a></li>
                 <li class="login" ontouchstart=""><a href="{{url_for('account')}}">Account</a></li>
                 <li class="login" ontouchstart=""><a href="{{url_for('logout')}}">Logout</a></li>
             {% else %}

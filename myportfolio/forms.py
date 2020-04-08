@@ -1,7 +1,7 @@
 from flask_wtf import FlaskForm
 from flask_wtf.file import FileField, FileAllowed
 from flask_login import current_user
-from wtforms import StringField, PasswordField, SubmitField, BooleanField
+from wtforms import StringField, PasswordField, SubmitField, BooleanField, TextAreaField
 from wtforms.validators import DataRequired, Length, Email, EqualTo, ValidationError
 from myportfolio.models import User
 
@@ -28,11 +28,8 @@ class RegistrationForm(FlaskForm):
             raise ValidationError('That email is taken. Please choose a different one.')
 
 class LoginForm(FlaskForm):
-    email = StringField('Email',
-                            validators=[DataRequired(), Email()])
-    password = PasswordField('Passowrd', 
-                            validators=[DataRequired(),
-                            Length(min=8, max=15)])
+    email = StringField('Email', validators=[DataRequired(), Email()])
+    password = PasswordField('Passowrd', validators=[DataRequired(), Length(min=8, max=15)])
     remember = BooleanField('Remember Me')
     submit =SubmitField('Login')
 
@@ -53,5 +50,11 @@ class UpdateAccountForm(FlaskForm):
             email = User.query.filter_by(email=email.data).first()
             if email: 
                 raise ValidationError('That email is taken. Please choose a different one.')
+
+class PostForm(FlaskForm):
+    worktitle = StringField('Title', validators=[DataRequired()])
+    skill = TextAreaField('Skill', validators=[DataRequired()])
+    content = TextAreaField('Content', validators=[DataRequired()])
+    submit = SubmitField('Post')
     
 
