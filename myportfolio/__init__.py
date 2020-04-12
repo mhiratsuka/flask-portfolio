@@ -25,8 +25,10 @@ def create_app(config_class=Config):
     from myportfolio.users.routes import users
     from myportfolio.posts.routes import posts
     from myportfolio.main.routes import main
+    from myportfolio.errors.handlers import errors
     app.register_blueprint(users)
     app.register_blueprint(posts)
     app.register_blueprint(main)
+    app.register_blueprint(errors)
 
     return app
