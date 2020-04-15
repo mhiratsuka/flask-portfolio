@@ -1,8 +1,28 @@
 {% extends "layout.html" %}
 {% block content %}
 <div class="vertical-wrapper">
-    <div class="contact">
-        <h2>{{ title }}</h2>
-    </div>
+    <section class="contact">
+        <h2>{{ title }} Michika</h2>
+    </section>
+    <section class="form">
+        <form action="http://formspree.io/hiratsukamichika@gmail.com" method="post" class="cf">
+            <p class="name cf">
+                <label for="name">Name</label>
+                <br><input type="text" id="name" name="name">
+            </p>
+            <p class="email cf">
+                <label for="email">Email</label>
+                <br><input type="email" id="email" name="email">
+            </p>
+            <p class="message cf">
+                <label for= "message">Message</label>
+                <br><textarea id="message" name="message"></textarea>
+            </p>
+            <p class="submit cf">
+                <button type="submit" class="btn-submit">Send</button>
+            <input type="hidden" name="_next" value="thanks.html"/>
+            </p>
+        </form> 
+    </section>
 </div>
 {% endblock content %}
