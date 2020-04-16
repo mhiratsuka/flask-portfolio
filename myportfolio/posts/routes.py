@@ -12,7 +12,7 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(worktitle=form.worktitle.data, skill=form.skill.data, content=form.content.data, author=current_user)
+        post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success')
@@ -35,14 +35,14 @@ def update_post(post_id):
     form = PostForm()
     if form.validate_on_submit():
         post.worktitle = form.worktitle.data 
-        post.skill = form.skill.data 
+        post.category = form.category.data 
         post.content = form.content.data 
         db.session.commit()
         flash('Your post has been updated', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
         form.worktitle.data = post.worktitle
-        form.skill.data = post.skill
+        form.category.data = post.skill
         form.content.data = post.content
     return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
 
