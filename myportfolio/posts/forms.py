@@ -7,5 +7,6 @@ class PostForm(FlaskForm):
     worktitle = StringField('Title', validators=[DataRequired()])
     category = TextAreaField('Category', validators=[DataRequired()])
     content = TextAreaField('Content', validators=[DataRequired()])
-    workpicture = FileField('Content', validators=[FileAllowed(['jpg', 'png']), FileRequired()])
+    workpicture = FileField('Work Picture', validators=[FileAllowed(['jpg', 'png']), FileRequired()])
+    workpicture_name = TextAreaField('Work Picture Name', validators=[DataRequired()])
     submit = SubmitField('Post')
