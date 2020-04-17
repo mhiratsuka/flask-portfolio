@@ -37,8 +37,9 @@ class Post(db.Model):
     worktitle = db.Column(db.String(100), nullable=False)
     category = db.Column(db.String(120), nullable=False)
     content = db.Column(db.Text, nullable=False)
+    workpicture = db.Column(db.String(120), nullable=False)
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
-        return f"Post('{self.worktitle}', '{self.category}', '{self.date_posted}')"
+        return f"Post('{self.worktitle}', '{self.category}', '{self.date_posted}', '{self.workpicture}')"

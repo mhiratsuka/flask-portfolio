@@ -3,6 +3,7 @@ from flask_login import current_user, login_required
 from myportfolio import db
 from myportfolio.models import Post
 from myportfolio.posts.forms import PostForm
+from myportfolio.posts.utils import save_work_picture
 
 
 posts = Blueprint('posts', __name__)
@@ -12,7 +13,8 @@ posts = Blueprint('posts', __name__)
 def new_post():
     form = PostForm()
     if form.validate_on_submit():
-        post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user)
+        workpicture = save_work_picture(form.workpicture.data)
+        post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user, workpicture=workpicture)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success')
