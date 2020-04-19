@@ -26,6 +26,9 @@
     {% if post.postpicture %}
         <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/post_imgs/' + post.postpicture) }}" alt="{{ post.postpicture_name }}">
     {% endif %}
+    {% if post.postvideo %}
+        <video controls src="{{ url_for('static', filename='videos/post_mp4/' + post.postvideo) }}" alt="{{ post.postvideo_name }}" type="video/mp4"></video>
+    {% endif %}
     </div>
 </article>
 <!-- Modal -->

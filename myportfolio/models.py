@@ -44,6 +44,8 @@ class Post(db.Model):
     site_description = db.Column(db.String(100))    
     postpicture = db.Column(db.String(120))
     postpicture_name = db.Column(db.String(100))
+    postvideo = db.Column(db.String(120))
+    postvideo_name = db.Column(db.String(100))
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 

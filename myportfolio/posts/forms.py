@@ -14,4 +14,6 @@ class PostForm(FlaskForm):
     site_description = TextAreaField('Link description')
     postpicture = FileField('Post Picture', validators=[FileAllowed(['jpg', 'png'])])
     postpicture_name = TextAreaField('Post Picture Name')
+    postvideo = FileField('Post Video', validators=[FileAllowed(['mp4'])])
+    postvideo_name = TextAreaField('Post Video Name')
     submit = SubmitField('Post')

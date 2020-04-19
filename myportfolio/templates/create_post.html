@@ -133,6 +133,28 @@
                 {% endif %}
             </div>
             <div class="form-group">
+                {{ form.postvideo.label()}}
+                {{ form.postvideo(class="form-control-file")}}
+                {% if form.postvideo.errors %}
+                    {% for error in form.postvideo.errors%}
+                        <span class="text-danger">{{ error }}</span></div></fieldset>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.postvideo_name.label(class="form-control-label")}}
+                {% if form.postvideo_name.errors %}
+                    {{ form.postvideo_name(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.postvideo_name.errors%}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.postvideo_name(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info")}}
             </div>    
         </form>

@@ -3,7 +3,7 @@ from flask_login import current_user, login_required
 from myportfolio import db
 from myportfolio.models import Post
 from myportfolio.posts.forms import PostForm
-from myportfolio.posts.utils import save_work_picture, save_post_picture
+from myportfolio.posts.utils import save_work_picture, save_post_picture, save_post_video
 
 
 posts = Blueprint('posts', __name__)
@@ -18,9 +18,13 @@ def new_post():
             postpicture = save_post_picture(form.postpicture.data)
         else:
             postpicture = None
+        if form.postvideo.data:
+            postvideo = save_post_video(form.postvideo.data)
+        else:
+            postvideo = None
         post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user, workpicture=workpicture, 
 workpicture_name=form.workpicture_name.data, date_developed=form.date_developed.data, site_link=form.site_link.data, site_description=form.site_description.data, 
-postpicture= postpicture, postpicture_name=form.postpicture_name.data,)
+postpicture=postpicture, postpicture_name=form.postpicture_name.data, postvideo=postvideo, postvideo_name=form.postvideo_name.data)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success')
