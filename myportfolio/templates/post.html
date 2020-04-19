@@ -14,8 +14,21 @@
         {% endif %}
     </div>
     <h2 class="article-title">{{ post.worktitle }}</h2>
-    <p class="article-content">{{ post.skill }}</p>
+    <p class="article-content">{{ post.category }}</p>
     <p class="article-content">{{ post.content }}</p>
+    <p class="article-content">{{ post.date_developed }}</p>
+    {% if post.site_link %}
+        <p class="article-content">{{ post.site_link }}</p>
+    {% endif %}
+    {% if post.site_description %}
+        <p class="article-content">{{ post.site_description }}</p>
+    {% endif %}
+    {% if post.postpicture %}
+        <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/post_imgs/' + post.postpicture) }}" alt="{{ post.postpicture_name }}">
+    {% endif %}
+    {% if post.postvideo %}
+        <video controls src="{{ url_for('static', filename='videos/post_mp4/' + post.postvideo) }}" alt="{{ post.postvideo_name }}" type="video/mp4"></video>
+    {% endif %}
     </div>
 </article>
 <!-- Modal -->

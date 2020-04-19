@@ -5,7 +5,7 @@
         <h2>{{ title }}</h2>
     </div>
     <div class="content-section">
-        <form method="POST" action="">
+        <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset>
                 <legend class="border-bottom mb-4">{{ legend }}</legend>
@@ -23,16 +23,16 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.skill.label(class="form-control-label")}}
-                    {% if form.skill.errors %}
-                        {{ form.skill(class="form-control form-control-lg is-invalid")}}
+                    {{ form.category.label(class="form-control-label")}}
+                    {% if form.category.errors %}
+                        {{ form.category(class="form-control form-control-lg is-invalid")}}
                         <div class="invalid-feedback">
-                            {% for error in form.skill.errors%}
+                            {% for error in form.category.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.skill(class="form-control form-control-lg")}}
+                        {{ form.category(class="form-control form-control-lg")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
@@ -48,7 +48,112 @@
                         {{ form.content(class="form-control form-control-lg")}}
                     {% endif %}
                 </div>
+                <div class="form-group">
+                    {{ form.date_developed.label(class="form-control-label")}}
+                    {% if form.date_developed.errors %}
+                        {{ form.date_developed(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.date_developed.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.date_developed(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.workpicture.label()}}
+                    {{ form.workpicture(class="form-control-file")}}
+                    {% if form.workpicture.errors %}
+                        {% for error in form.workpicture.errors%}
+                            <span class="text-danger">{{ error }}</span></div></fieldset>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.workpicture_name.label(class="form-control-label")}}
+                    {% if form.workpicture_name.errors %}
+                        {{ form.workpicture_name(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.workpicture_name.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.workpicture_name(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.site_link.label(class="form-control-label")}}
+                    {% if form.site_link.errors %}
+                        {{ form.site_link(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.site_link.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.site_link(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.site_description.label(class="form-control-label")}}
+                    {% if form.site_description.errors %}
+                        {{ form.site_description(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.site_description.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.site_description(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
             </fieldset>
+            <div class="form-group">
+                {{ form.postpicture.label()}}
+                {{ form.postpicture(class="form-control-file")}}
+                {% if form.postpicture.errors %}
+                    {% for error in form.postpicture.errors%}
+                        <span class="text-danger">{{ error }}</span></div></fieldset>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.postpicture_name.label(class="form-control-label")}}
+                {% if form.postpicture_name.errors %}
+                    {{ form.postpicture_name(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.postpicture_name.errors%}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.postpicture_name(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.postvideo.label()}}
+                {{ form.postvideo(class="form-control-file")}}
+                {% if form.postvideo.errors %}
+                    {% for error in form.postvideo.errors%}
+                        <span class="text-danger">{{ error }}</span></div></fieldset>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.postvideo_name.label(class="form-control-label")}}
+                {% if form.postvideo_name.errors %}
+                    {{ form.postvideo_name(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.postvideo_name.errors%}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.postvideo_name(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info")}}
             </div>    

@@ -35,10 +35,19 @@ class User(db.Model, UserMixin):
 class Post(db.Model): 
     id = db.Column(db.Integer, primary_key=True)
     worktitle = db.Column(db.String(100), nullable=False)
-    skill = db.Column(db.String(120), nullable=False)
+    category = db.Column(db.String(120), nullable=False)
     content = db.Column(db.Text, nullable=False)
+    workpicture = db.Column(db.String(120), nullable=False)
+    workpicture_name = db.Column(db.String(100), nullable=False)
+    date_developed = db.Column(db.String(100), nullable=False)
+    site_link = db.Column(db.String(200))
+    site_description = db.Column(db.String(100))    
+    postpicture = db.Column(db.String(120))
+    postpicture_name = db.Column(db.String(100))
+    postvideo = db.Column(db.String(120))
+    postvideo_name = db.Column(db.String(100))
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 
     def __repr__(self):
-        return f"Post('{self.worktitle}', '{self.skill}', '{self.date_posted}')"
+        return f"Post('{self.worktitle}', '{self.category}', '{self.date_posted}', '{self.workpicture}', '{self.workpicture_name}')"
