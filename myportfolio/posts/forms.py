@@ -12,4 +12,6 @@ class PostForm(FlaskForm):
     date_developed = TextAreaField('When this project was tackled', validators=[DataRequired()])
     site_link= TextAreaField('Link')
     site_description = TextAreaField('Link description')
+    postpicture = FileField('Post Picture', validators=[FileAllowed(['jpg', 'png'])])
+    postpicture_name = TextAreaField('Post Picture Name')
     submit = SubmitField('Post')

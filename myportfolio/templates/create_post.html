@@ -111,6 +111,28 @@
                 </div>
             </fieldset>
             <div class="form-group">
+                {{ form.postpicture.label()}}
+                {{ form.postpicture(class="form-control-file")}}
+                {% if form.postpicture.errors %}
+                    {% for error in form.postpicture.errors%}
+                        <span class="text-danger">{{ error }}</span></div></fieldset>
+                    {% endfor %}
+                {% endif %}
+            </div>
+            <div class="form-group">
+                {{ form.postpicture_name.label(class="form-control-label")}}
+                {% if form.postpicture_name.errors %}
+                    {{ form.postpicture_name(class="form-control form-control-lg is-invalid")}}
+                    <div class="invalid-feedback">
+                        {% for error in form.postpicture_name.errors%}
+                            <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                {% else %}
+                    {{ form.postpicture_name(class="form-control form-control-lg")}}
+                {% endif %}
+            </div>
+            <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info")}}
             </div>    
         </form>
