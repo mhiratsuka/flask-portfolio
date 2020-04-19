@@ -10,4 +10,6 @@ class PostForm(FlaskForm):
     workpicture = FileField('Work Picture', validators=[FileAllowed(['jpg', 'png']), FileRequired()])
     workpicture_name = TextAreaField('Work Picture Name', validators=[DataRequired()])
     date_developed = TextAreaField('When this project was tackled', validators=[DataRequired()])
+    site_link= TextAreaField('Link')
+    site_description = TextAreaField('Link description')
     submit = SubmitField('Post')

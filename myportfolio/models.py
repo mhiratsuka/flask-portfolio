@@ -40,6 +40,8 @@ class Post(db.Model):
     workpicture = db.Column(db.String(120), nullable=False)
     workpicture_name = db.Column(db.String(100), nullable=False)
     date_developed = db.Column(db.String(100), nullable=False)
+    site_link = db.Column(db.String(200))
+    site_description = db.Column(db.String(100))    
     date_posted = db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     user_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
 

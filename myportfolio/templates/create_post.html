@@ -83,6 +83,32 @@
                         {{ form.workpicture_name(class="form-control form-control-lg")}}
                     {% endif %}
                 </div>
+                <div class="form-group">
+                    {{ form.site_link.label(class="form-control-label")}}
+                    {% if form.site_link.errors %}
+                        {{ form.site_link(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.site_link.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.site_link(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.site_description.label(class="form-control-label")}}
+                    {% if form.site_description.errors %}
+                        {{ form.site_description(class="form-control form-control-lg is-invalid")}}
+                        <div class="invalid-feedback">
+                            {% for error in form.site_description.errors%}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                        {{ form.site_description(class="form-control form-control-lg")}}
+                    {% endif %}
+                </div>
             </fieldset>
             <div class="form-group">
                 {{ form.submit(class="btn btn-outline-info")}}

@@ -14,7 +14,8 @@ def new_post():
     form = PostForm()
     if form.validate_on_submit():
         workpicture = save_work_picture(form.workpicture.data)
-        post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user, workpicture=workpicture, workpicture_name=form.workpicture_name.data, date_developed=form.date_developed.data)
+        post = Post(worktitle=form.worktitle.data, category=form.category.data, content=form.content.data, author=current_user, workpicture=workpicture, 
+workpicture_name=form.workpicture_name.data, date_developed=form.date_developed.data, site_link=form.site_link.data, site_description=form.site_description.data,)
         db.session.add(post)
         db.session.commit()
         flash('Your post has been created', 'success')
