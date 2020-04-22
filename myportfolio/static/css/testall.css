@@ -1,32 +1,216 @@
-h1 {
-  color: red;
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  padding: 10px;
 }
 
-h2 {
-  color: black;
+@media (max-width: 480px) {
+  header {
+    padding-bottom: 1%;
+    background: transparent;
+  }
 }
 
-h3 {
-  color: pink;
-}
-
-h1 {
-  color: red;
-}
-
-h2 {
-  color: black;
-}
-
-h3 {
-  color: pink;
-}
-
-div .test {
+nav {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: right;
-      -ms-flex-pack: right;
-          justify-content: right;
+  width: 100%;
+}
+
+h1 {
+  display: inline-block;
+  margin: 10px;
+}
+
+@media (max-width: 800px) {
+  h1 {
+    width: 30%;
+  }
+}
+
+h1 img {
+  width: 45px;
+  height: auto;
+}
+
+.menu-btn {
+  /* nav menu btn */
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .menu-btn:checked ~ .nav {
+    max-height: 100%;
+    width: 100%;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:before {
+    max-height: 100%;
+    width: 100%;
+  }
+  .menu-btn:checked ~ .menu-icon .navicon:after {
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+  }
+  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, .menu-btn :checked ~ .menu-icon:not(.steps) .navicon:after {
+    top: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .menu-btn:hover {
+    color: #e89ac0;
+  }
+}
+
+.menu-icon {
+  /* nav menu icon */
+  display: none;
+}
+
+@media (max-width: 480px) {
+  .menu-icon {
+    cursor: pointer;
+    display: inline-block;
+    float: right;
+    padding: 28px 20px;
+    position: relative;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+}
+
+.navicon {
+  background: #e89ac0;
+  display: block;
+  height: 2px;
+  position: relative;
+  -webkit-transition: background .2s ease-out;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.navicon:before, .navicon :after {
+  background: #e89ac0;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  -webkit-transition: all .2s ease-out;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.navicon:before {
+  top: 5px;
+}
+
+.navicon:after {
+  top: -5px;
+}
+
+.nav {
+  /*TODO: ul*/
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 800px) {
+  .nav {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #003355;
+    width: 100%;
+    position: fixed;
+    height: 100%;
+    top: 0;
+    z-index: -9;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    clear: both;
+    max-height: 0;
+    -webkit-transition: max-height .2s ease-out;
+    transition: max-height .2s ease-out;
+  }
+}
+
+.nav li {
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-bottom: 2px solid transparent;
+}
+
+@media (max-width: 800px) {
+  .nav li {
+    text-align: center;
+    font-size: 1.3em;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav li {
+    width: 100%;
+  }
+}
+
+.nav li:hover {
+  border-bottom: 2px solid #fff;
+}
+
+@media (max-width: 480px) {
+  .nav li:hover {
+    border-bottom: 2px transparent;
+  }
+}
+
+.nav li:hover a {
+  color: #fff;
+}
+
+@media (max-width: 480px) {
+  .nav li a {
+    display: block;
+    padding: 20px 20px;
+    border-right: 1px solid #f4f4f4;
+    text-decoration: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav li a:hover {
+    color: #e89ac0;
+  }
 }
