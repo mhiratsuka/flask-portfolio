@@ -11,16 +11,17 @@ const exec = require('child_process').exec;
 
 const paths = {
     styles: {
-        src: "./myportfolio/static/scss/**/*.scss",
-        dest: "./myportfolio/static/css/"
+        srcScss: "./myportfolio/static/scss/**/*.scss",
+        dest: "./myportfolio/static/css/",
+        srcCss: "./myportfolio/static/css/*.css"
     },
     htmls: {
         src: "./myportfolio/templates/**/*.html"
     }
 };
 
-function runServer(done) {
-    exec('python run.py');
+function runServer(done) { //TODO: find way to run server from gulp later
+    exec("python run.py");
     done();
 }
 
@@ -38,7 +39,7 @@ function browserSyncFunc(done) {
 }
 
 function styles() {
-    return gulp.src(paths.styles.src)
+    return gulp.src(paths.styles.srcScss)
         .pipe(sassGlob())
         .pipe(plumber({errorHandler: notify.onError('<%= error.message %>')}))
         .pipe(sass({ outputStyle: "expanded" }).on('error', sass.logError))
@@ -47,11 +48,11 @@ function styles() {
 }
 
 function watchFunc() {
-    gulp.watch(paths.styles.src, styles);
-    gulp.watch([paths.styles.src, paths.htmls.src], gulp.series('browserReloadFunc'));
+    watch(paths.styles.srcScss, styles);
+    watch([paths.styles.srcCss, paths.htmls.src], gulp.series('browserReloadFunc'));
 }
 
-const watch = gulp.parallel(watchFunc, runServer, browserSyncFunc);
+const watch = gulp.series(runServer, browserSyncFunc, watchFunc); //TODO: find way to run server from gulp later
 
 
 exports.runServer = runServer;
