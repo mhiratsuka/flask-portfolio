@@ -33,7 +33,8 @@ function browserReloadFunc(done) {
 function browserSyncFunc(done) {
     browserSync.init({
         proxy: "127.0.0.1:5000",
-        port: 8888
+        port: 8888,
+        host: '192.168.0.5'
       });
     done();
 }
@@ -48,11 +49,11 @@ function styles() {
 }
 
 function watchFunc() {
-    watch(paths.styles.srcScss, styles);
-    watch([paths.styles.srcCss, paths.htmls.src], gulp.series('browserReloadFunc'));
+    gulp.watch(paths.styles.srcScss, styles);
+    gulp.watch([paths.styles.srcCss, paths.htmls.src], gulp.series('browserReloadFunc'));
 }
 
-const watch = gulp.series(runServer, browserSyncFunc, watchFunc); //TODO: find way to run server from gulp later
+const watch = gulp.parallel(runServer, browserSyncFunc, watchFunc); //TODO: find way to run server from gulp later
 
 
 exports.runServer = runServer;
