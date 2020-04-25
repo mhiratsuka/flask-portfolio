@@ -40,15 +40,6 @@ main{
 	height: 100%;
 }
 
-main .main_name{
-	font-size: 2em;
-	position: absolute;
-	top: 50%;
-    left: 50%;
-    transform: translate(-50%,-55%);
-    font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-}
-
 main .backimage{
 	z-index: -2;
 }
@@ -483,9 +474,7 @@ h1#title, .action p{
 		font-size: 1.5em;
 	}
 
-	main .main_name p{
-		font-size: 0.7em;
-	}
+
 
 	.social-menu ul li {
     	font-size: 1.2em;
@@ -538,7 +527,6 @@ h1#title, .action p{
    		 margin-bottom: 15%;
 	}
 
-
 	/*thanks page*/
 	main .thank h2 {
 		font-size: 3em;
@@ -556,11 +544,6 @@ h1#title, .action p{
 
 /* iPad tablet resolution*/
 @media screen and (max-width: 800px) and (min-width:481px){
-
-	main .main_name p{
-		font-size: 0.7em;
-	}
-
 	/*about*/
 	main .vertical-wrapper_about {
 	    width: 80%;

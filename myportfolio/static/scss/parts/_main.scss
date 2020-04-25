@@ -1,0 +1,17 @@
+.main_name{
+	font-size: 2em;
+	position: absolute;
+	top: 50%;
+    left: 50%;
+    transform: translate(-50%,-55%);
+    font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    width: 100%;
+    
+    @media (max-width: 768px) {  
+        width: 80%;
+    }
+
+    p {
+        font-size: 0.7em;
+    }
+}
