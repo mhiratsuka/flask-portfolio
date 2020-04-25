@@ -1,3 +1,25 @@
+footer {
+  text-align: center;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+footer p {
+  color: #fff;
+  margin: 0;
+  font-size: 16px;
+}
+
+@media (max-width: 768px) {
+  footer p {
+    font-size: 12px;
+  }
+}
+
 header {
   position: fixed;
   top: 0;
@@ -84,7 +106,7 @@ h1 img {
     display: flex;
     -webkit-box-pack: end;
         -ms-flex-pack: end;
-            justify-content: end;
+            justify-content: flex-end;
     padding: 28px 10px;
     -webkit-user-select: none;
        -moz-user-select: none;

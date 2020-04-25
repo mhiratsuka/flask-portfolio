@@ -68,21 +68,6 @@ main .vertical-wrapper{
     z-index: 2;
 }
 
-footer {
-	text-align: center;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	width: 100%;
-	height: auto;
-	display: block;
-}
-
-footer p{
-	padding: 0em 1em 0em 1em;
-	color: #fff;
-}
-
 /*work page*/
 main .work {
 	top: 67%;
@@ -567,11 +552,6 @@ h1#title, .action p{
 		margin-top: 0; 
 	}
 	/*end thanks page*/
-
-	footer p {
-		font-size: 0.8em;
-	}
-
 }
 
 /* iPad tablet resolution*/
