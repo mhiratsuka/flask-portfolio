@@ -6,7 +6,7 @@ var minHue, maxHue;
 
 
 function setup() {
-  var canvas = createCanvas(innerWidth, innerHeight);
+  var canvas = createCanvas(innerWidth -20, innerHeight -7);
   canvas.parent("plumbox");
 
   colorMode(HSB,360);
@@ -18,7 +18,6 @@ function setup() {
   tree = createGraphics(width, height);  
   tree.parent("plumbox");
 }
-
 
 function draw() {     
   image(bg, 0, 0); // display background  
@@ -41,7 +40,6 @@ function draw() {
 //   }
   
 // }
-
 
 function createBackground() {
   bg = createGraphics(width, height);
