@@ -7,10 +7,11 @@ header {
   padding: 10px;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   header {
     padding-bottom: 1%;
     background: transparent;
+    padding: 0;
   }
 }
 
@@ -26,9 +27,11 @@ h1 {
   margin: 10px;
 }
 
-@media (max-width: 800px) {
+@media (max-width: 768px) {
   h1 {
     width: 30%;
+    margin: 0;
+    padding-left: 10px;
   }
 }
 
@@ -42,25 +45,27 @@ h1 img {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .menu-btn:checked ~ .nav {
     max-height: 100%;
     width: 100%;
   }
+  .menu-btn:checked ~ .menu-icon .navicon {
+    background: transparent;
+  }
   .menu-btn:checked ~ .menu-icon .navicon:before {
-    max-height: 100%;
-    width: 100%;
+    top: 0;
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
   }
   .menu-btn:checked ~ .menu-icon .navicon:after {
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
-  }
-  .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before, .menu-btn :checked ~ .menu-icon:not(.steps) .navicon:after {
     top: 0;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .menu-btn:hover {
     color: #e89ac0;
   }
@@ -71,17 +76,21 @@ h1 img {
   display: none;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .menu-icon {
     cursor: pointer;
-    display: inline-block;
-    float: right;
-    padding: 28px 20px;
-    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: end;
+    padding: 28px 10px;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none;
+    width: 70%;
   }
 }
 
@@ -95,7 +104,7 @@ h1 img {
   width: 18px;
 }
 
-.navicon:before, .navicon :after {
+.navicon:before, .navicon:after {
   background: #e89ac0;
   content: '';
   display: block;
@@ -129,13 +138,7 @@ h1 img {
   margin: 0;
 }
 
-@media (max-width: 800px) {
-  .nav {
-    width: 45%;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav {
     margin: 0;
     padding: 0;
@@ -147,6 +150,7 @@ h1 img {
     height: 100%;
     top: 0;
     z-index: -9;
+    max-height: 0;
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
@@ -157,10 +161,9 @@ h1 img {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    clear: both;
-    max-height: 0;
     -webkit-transition: max-height .2s ease-out;
     transition: max-height .2s ease-out;
+    opacity: 0.9;
   }
 }
 
@@ -173,16 +176,10 @@ h1 img {
   border-bottom: 2px solid transparent;
 }
 
-@media (max-width: 800px) {
-  .nav li {
-    text-align: center;
-    font-size: 1.3em;
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav li {
     width: 100%;
+    text-align: center;
   }
 }
 
@@ -190,7 +187,7 @@ h1 img {
   border-bottom: 2px solid #fff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav li:hover {
     border-bottom: 2px transparent;
   }
@@ -200,16 +197,15 @@ h1 img {
   color: #fff;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav li a {
     display: block;
     padding: 20px 20px;
-    border-right: 1px solid #f4f4f4;
     text-decoration: none;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .nav li a:hover {
     color: #e89ac0;
   }
