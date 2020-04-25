@@ -17,10 +17,14 @@ const paths = {
     },
     htmls: {
         src: "./myportfolio/templates/**/*.html"
+    },
+    js: {
+        src: "./myportfolio/static/js/*.js"
     }
+    
 };
 
-function runServer(done) { //TODO: find way to run server from gulp later
+function runServer(done) { 
     exec("python run.py");
     done();
 }
@@ -50,7 +54,7 @@ function styles() {
 
 function watchFunc() {
     gulp.watch(paths.styles.srcScss, styles);
-    gulp.watch([paths.styles.srcCss, paths.htmls.src], gulp.series('browserReloadFunc'));
+    gulp.watch([paths.styles.srcCss, paths.htmls.src, paths.js.src], gulp.series('browserReloadFunc'));
 }
 
 const watch = gulp.parallel(runServer, browserSyncFunc, watchFunc); //TODO: find way to run server from gulp later
