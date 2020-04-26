@@ -233,6 +233,124 @@ h1 img {
   }
 }
 
+.about .vertical-wrapper {
+  width: 80%;
+  margin: 0 auto;
+  position: absolute;
+  max-width: 800px;
+}
+
+@media (max-width: 768px) {
+  .about .vertical-wrapper {
+    top: 35%;
+  }
+}
+
+.about-content h2 {
+  font-size: 32px;
+  font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  text-align: left;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .about-content h2 {
+    font-size: 1.5em;
+  }
+}
+
+.about-content h3 {
+  font-size: 1.5em;
+  font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  text-align: left;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .about-content h3 {
+    font-size: 1.2em;
+  }
+}
+
+.about-content p {
+  font-size: 1.2em;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .about-content p {
+    font-size: 0.9em;
+  }
+}
+
+.about-social-menu li {
+  width: 10%;
+  float: left;
+  -webkit-transition: 2s;
+  transition: 2s;
+  font-size: 24px;
+}
+
+@media (max-width: 768px) {
+  .about-social-menu li {
+    width: 15%;
+    float: left;
+  }
+}
+
+@media (min-width: 769px) {
+  .about-social-menu li:hover {
+    -webkit-animation-name: icon-rotate;
+            animation-name: icon-rotate;
+    -webkit-animation-duration: 1.5s;
+            animation-duration: 1.5s;
+    -webkit-animation-iteration-count: 1;
+            animation-iteration-count: 1;
+    -webkit-animation-timing-function: linear;
+            animation-timing-function: linear;
+    -webkit-animation-play-state: running;
+            animation-play-state: running;
+  }
+}
+
+.about-social-menu a:hover {
+  text-decoration: none;
+  color: #fff;
+}
+
+.about-social-menu .hidden {
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+  position: absolute;
+}
+
+@-webkit-keyframes icon-rotate {
+  0% {
+    -webkit-transform: rotate3d(0deg);
+            transform: rotate3d(0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 360deg);
+            transform: rotate3d(1, 1, 0, 360deg);
+  }
+}
+
+@keyframes icon-rotate {
+  0% {
+    -webkit-transform: rotate3d(0deg);
+            transform: rotate3d(0deg);
+  }
+  100% {
+    -webkit-transform: rotate3d(1, 1, 0, 360deg);
+            transform: rotate3d(1, 1, 0, 360deg);
+  }
+}
+
 .main_name {
   font-size: 2em;
   position: absolute;

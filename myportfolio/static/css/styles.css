@@ -242,62 +242,6 @@ h1#title, .action p{
 
 /*end index puzzle page*/
 
-
-/*about page*/
-.about h2{
-	font-size: 2em;
-	font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-	text-align: left;
-}
-
-.about h3{
-	font-size: 1.5em;
-	font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
-	text-align: left;
-}
-
-.about p{
-	font-size: 1.2em;
-	text-align: left;
-}
-
-.social-menu ul li{
-	width: 10%;
-    float: left;
-    transition: 2s;
-    font-size: 1.5em;
-}
-
-.social-menu ul li:hover{
-	animation-name: icon-rotate;
-	animation-duration: 1.5s;
-	animation-iteration-count: 1;
-	animation-timing-function: linear;
-	animation-play-state: running;
-}
-
-@keyframes icon-rotate{
-	0%{
-		transform: rotate3d(0deg);
-	}
- 	100%{
-		transform: rotate3d(1, 1, 0,360deg);
- 	}
-}
-
-.hidden{
-	overflow: hidden;
-	clip: rect(0 0 0 0);
-	height: 1px;
-	width: 1px;
-	margin: -1px;
-	padding: 0;
-	border: 0;
-	position: absolute;
-}
-
-/*end about page*/
-
 /*contact page*/
 .contact h2 {
 	font-size: 2em;
@@ -493,32 +437,6 @@ h1#title, .action p{
     	font-size: 1.1rem;
 	}
 
-	/*about*/
-	main .vertical-wrapper_about {
-	    width: 80%;
-	    margin: 0 auto;
-	    position: absolute;
-	    top: 48%;
-	    left: 50%;
-	    transform: translate(-50%,-55%);
-	    max-width: 800px;
-	    margin-top: 50px;
-	    margin-bottom: 75px;
-	    z-index: -10;
-	}
-
-	main .about h2{
-		font-size: 1.5em;
-	}
-
-	main .about h3{
-		font-size: 1.2em;
-	}
-
-	main .about p {
-		font-size: 0.9em;
-	}
-
 	main .dwork {
     	max-width: 100%;
 	}
@@ -544,28 +462,6 @@ h1#title, .action p{
 
 /* iPad tablet resolution*/
 @media screen and (max-width: 800px) and (min-width:481px){
-	/*about*/
-	main .vertical-wrapper_about {
-	    width: 80%;
-	    margin: 0 auto;
-	    position: absolute;
-	    top: 40%;
-	    left: 50%;
-	    transform: translate(-50%,-55%);
-	    max-width: 800px;
-	    margin-top: 50px;
-	    margin-bottom: 75px;
-	}
-
-	main.social-menu ul li {
-	    width: 15%;
-	    float: left;
-	}
-
-	main.social-menu ul li a{
-	    font-size: 1.5em;
-	}
-
 	/*work page*/
 	main .work section .div:last-child{
 		margin-bottom: 10%;

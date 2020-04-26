@@ -1,0 +1,108 @@
+.about {
+    .vertical-wrapper {
+        width: 80%;
+	    margin: 0 auto;
+	    position: absolute;
+        max-width: 800px;
+        
+        @media (max-width: 768px) { 
+            top: 35%;
+        }
+    }
+}
+
+.about-content {
+    h2 {
+        font-size: 32px;
+        font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        text-align: left;
+        font-weight: 700;
+        
+        @media (max-width: 768px) {  
+            font-size: 1.5em;
+        }
+    }
+} 
+
+.about-content {
+    h3 {
+        font-size: 1.5em;
+        font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        text-align: left;
+        font-weight: 700;
+        
+        @media (max-width: 768px) {  
+            font-size: 1.2em;
+        }
+    }
+}
+
+.about-content {
+    p {
+        font-size: 1.2em;
+        text-align: left;
+    
+        @media (max-width: 768px) {  
+            font-size: 0.9em;
+        }
+    }
+}
+
+.about-social-menu {
+    li {
+        width: 10%;
+        float: left;
+        transition: 2s;
+        font-size: 24px;
+
+        @media (max-width: 768px) {  
+            width: 15%;
+            float: left;
+        }
+
+        @media (min-width: 769px) {
+            &:hover {
+                animation-name: icon-rotate;
+                animation-duration: 1.5s;
+                animation-iteration-count: 1;
+                animation-timing-function: linear;
+                animation-play-state: running;
+    
+            }   
+        }
+    }
+}
+
+.about-social-menu {
+    a {
+        &:hover {
+            text-decoration: none;
+            color: #fff;
+        }
+    }
+}
+
+.about-social-menu {
+    .hidden {
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        width: 1px;
+        margin: -1px;
+        padding: 0;
+        border: 0;
+        position: absolute;
+    }
+}
+
+@keyframes icon-rotate{
+	0%{
+		transform: rotate3d(0deg);
+	}
+ 	100%{
+		transform: rotate3d(1, 1, 0,360deg);
+ 	}
+}
+
+
+
