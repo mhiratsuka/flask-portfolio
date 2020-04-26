@@ -1,0 +1,125 @@
+.contact {
+    .vertical-wrapper {
+        top: 45%;
+
+        @media (max-width: 768px) {  
+            top: 55%;
+            width: 80%;;
+        }
+    }
+}
+
+
+.contact {
+    h2 {
+        font-size: 38px;
+	    font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        text-align: left;
+        margin: 0;
+        margin-bottom: 30px;
+        
+        @media (max-width: 768px) { 
+            font-size: 24px;
+            margin-bottom: 25px;
+        }
+    }
+}
+
+.contact {
+    p {
+        font-size: 20px;
+        text-align: left;
+        margin: 0;
+        padding: 15px;
+
+        @media (max-width: 768px) {
+            font-size: 18px;
+            padding-left: 9px;
+            padding-bottom: 15px;
+        }
+    }  
+}
+
+.contact-form {
+    text-align: left;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.name {
+    width: 50%;
+    box-sizing: border-box;
+    
+    @media (max-width: 768px) {
+    	width: 100%;
+    }
+}
+
+.email {
+    width: 50%;
+    box-sizing: border-box;
+    
+    @media (max-width: 768px) {
+    	width: 100%;
+    }
+}
+
+.message {
+    width: 100%;
+    box-sizing: border-box;
+    
+    @media (max-width: 768px) {
+    	width: 100%;
+    }
+}
+
+.submit{
+	padding: 5px 20px;
+    width: 100%;
+    
+    @media (max-width: 768px) {
+        padding: 4px 20px 4px 9px;
+    }
+}
+
+.contact-form {
+    input{
+        display: block;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #c0c0c0;
+        width: 100%;
+        color: #c0c0c0;
+        font-size: 18px;
+        padding-bottom: 3px;
+    }
+}
+
+.contact-form {
+    textarea{
+        display: block;
+        width: 100%;
+        height: 50px;
+        background-color: transparent;
+        border: none;
+        border-bottom: 1px solid #c0c0c0;
+        color: #c0c0c0;
+        font-size: 18px;
+    }
+}
+
+.btn-submit {
+	display: block;
+    background-color: transparent;
+    border: 1.2px solid #e89ac0;
+    color: #e89ac0;
+    text-align: left;
+    padding: 5px 25px;
+    font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+    cursor: pointer;
+    font-weight: bold;
+
+    @media (max-width: 768px) {
+        padding: 5px 20px;
+    }
+}
