@@ -35,7 +35,7 @@ h1{
     }
 }
 
-.menu-btn { /* nav menu btn */
+.menu-btn { 
     display: none;
     
     @media (max-width: 768px) {  
@@ -66,7 +66,7 @@ h1{
     }
 }
 
-.menu-icon { /* nav menu icon */
+.menu-icon { 
     display: none;
 
     @media (max-width: 768px) { 
@@ -107,7 +107,7 @@ h1{
 }
 
 
-.nav { /*TODO: ul*/
+.nav { 
     display: flex;
     justify-content: flex-end;
     align-items: center;
@@ -138,34 +138,21 @@ h1{
         padding-right: 10px;
         font-size: 20px;
         box-sizing: border-box;
-        border-bottom: 2px solid transparent;
 
         @media (max-width: 768px) { 
             width: 100%;
             text-align: center;
+            padding: 20px;
         }
 
         &:hover {
-            border-bottom: 2px solid #fff;
-
-            @media (max-width: 768px) { 
-                border-bottom: 2px transparent;
-            }
-
             a {
-                color: #fff;
-            }
-        }
-
-        a {
-            @media (max-width: 768px) { 
-                display: block;
-                padding: 20px 20px;
-                text-decoration: none;
-            }
-
-            &:hover { 
                 @media (max-width: 768px) { 
+                    display: block;
+                    text-decoration: none;
+                }
+    
+                &:hover { 
                     color:#e89ac0;
                 }
             }
