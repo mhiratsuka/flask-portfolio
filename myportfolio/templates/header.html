@@ -1,6 +1,6 @@
 <header class="{{ title }}">
     <nav>
-        <h1 class="logo cf">
+        <h1 class="logo">
             <a href="/">
                 <img src="{{url_for('static', filename='images/plumlogo.png')}}" alt="logo">
             </a>
@@ -8,7 +8,7 @@
         <input class="menu-btn" type="checkbox" id="menu-btn" />
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
           
-        <ul class="nav cf">
+        <ul class="nav">
             <li class="work" ontouchstart=""><a href="{{url_for('main.work')}}">Work</a></li>
             <li class="about" ontouchstart=""><a href="{{url_for('main.about')}}">About</a></li>
             <li class="contact" ontouchstart=""><a href="{{url_for('main.contact')}}">Contact</a></li>
