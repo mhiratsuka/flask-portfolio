@@ -4,10 +4,6 @@
 	    margin: 0 auto;
 	    position: absolute;
         max-width: 800px;
-        
-        @media (max-width: 768px) { 
-            top: 35%;
-        }
     }
 }
 
@@ -19,31 +15,31 @@
         font-weight: 700;
         
         @media (max-width: 768px) {  
-            font-size: 1.5em;
+            font-size: 24px;
         }
     }
 } 
 
 .about-content {
     h3 {
-        font-size: 1.5em;
+        font-size: 24px;
         font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
         text-align: left;
         font-weight: 700;
         
         @media (max-width: 768px) {  
-            font-size: 1.2em;
+            font-size: 19px;
         }
     }
 }
 
 .about-content {
     p {
-        font-size: 1.2em;
+        font-size: 19px;
         text-align: left;
     
         @media (max-width: 768px) {  
-            font-size: 0.9em;
+            font-size: 14px;
         }
     }
 }
