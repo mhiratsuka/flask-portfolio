@@ -44,12 +44,16 @@
     }
 }
 
+.about-social-menu ul {
+    display: flex;
+}
+
 .about-social-menu {
     li {
         width: 10%;
-        float: left;
         transition: 2s;
         font-size: 24px;
+        text-align: center;
 
         @media (max-width: 768px) {  
             width: 15%;
