@@ -32,7 +32,6 @@ a {
 
 main {
   color: #fff;
-  text-align: center;
   height: calc(100vh - 226px);
   height: 100%;
 }
@@ -52,7 +51,6 @@ main {
 footer {
   text-align: center;
   position: fixed;
-  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -265,6 +263,10 @@ h1 img {
   color: #e89ac0;
 }
 
+.login .border-bottom {
+  margin-bottom: 10px;
+}
+
 .about .vertical-wrapper {
   width: 80%;
   margin: 0 auto;
@@ -277,6 +279,7 @@ h1 img {
   font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   text-align: left;
   font-weight: 700;
+  margin-bottom: 30px;
 }
 
 @media (max-width: 768px) {
@@ -290,6 +293,7 @@ h1 img {
   font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
   text-align: left;
   font-weight: 700;
+  margin-bottom: 20px;
 }
 
 @media (max-width: 768px) {
@@ -309,12 +313,18 @@ h1 img {
   }
 }
 
+.about-social-menu ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 .about-social-menu li {
   width: 10%;
-  float: left;
   -webkit-transition: 2s;
   transition: 2s;
   font-size: 24px;
+  text-align: center;
 }
 
 @media (max-width: 768px) {
@@ -394,6 +404,7 @@ h1 img {
   text-align: left;
   margin: 0;
   margin-bottom: 30px;
+  font-weight: 700;
 }
 
 @media (max-width: 768px) {
@@ -531,6 +542,204 @@ h1 img {
   }
 }
 
+.main_name h2 {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 700;
+  font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
 .main_name p {
-  font-size: 0.7em;
+  font-size: 32px;
+  text-align: center;
+  font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+}
+
+@media (max-width: 768px) {
+  .main_name p {
+    font-size: 23px;
+  }
+}
+
+#plumbox {
+  text-align: center;
+}
+
+.vertical-wrapper.work {
+  margin-top: 10%;
+  margin-bottom: 30px;
+  position: initial;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  background-color: #003355;
+}
+
+.work {
+  line-height: initial;
+}
+
+.work h2 {
+  font-size: 32px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  text-align: left;
+  font-weight: 700;
+}
+
+.thumb {
+  font-size: 0;
+}
+
+.thumb img {
+  width: 100%;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.ttls {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: 50%;
+  width: 100%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  background-color: #00020F;
+  opacity: 0;
+  min-height: 100%;
+}
+
+@media (max-width: 768px) {
+  .ttls {
+    opacity: 0.8;
+  }
+}
+
+@media (min-width: 769px) {
+  .ttls:hover {
+    opacity: 0.8;
+    -webkit-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+  }
+}
+
+.ttls h3 {
+  font-size: 40px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  margin-top: 35%;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .ttls h3 {
+    font-size: 20px;
+  }
+}
+
+.ttls p {
+  font-size: 32px;
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .ttls p {
+    font-size: 12px;
+  }
+}
+
+.project {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 5px solid #fff;
+  margin: 5% 0;
+  position: relative;
+}
+
+.project:last-child {
+  margin-bottom: 80px;
+}
+
+.view {
+  margin-right: 3%;
+  font-weight: bold;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+@media (max-width: 767px) {
+  .view {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+}
+
+.view a {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border: 3px solid #e89ac0;
+  text-decoration: none;
+  color: #fff;
+  font-size: 19px;
+  border-radius: 4%;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+@media (max-width: 767px) {
+  .view a {
+    border: 2px solid #e89ac0;
+    width: 95%;
+  }
+}
+
+p.view {
+  margin-bottom: 0;
+  margin-right: 20px;
+}
+
+@media (max-width: 767px) {
+  p.view {
+    margin-right: 0;
+  }
+}
+
+.vertical-wrapper.create_post {
+  margin-top: 10%;
+  margin-bottom: 30px;
+  background-color: #003355;
+  position: initial;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+}
+
+.create_post h2 {
+  text-align: center;
+}
+
+.create_post label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+}
+
+.create_post .form-group {
+  text-align: right;
+}
+
+.create_post .btn {
+  padding: 5px 50px;
+}
+
+@media (max-width: 768px) {
+  .create_post .btn {
+    width: 100%;
+  }
 }

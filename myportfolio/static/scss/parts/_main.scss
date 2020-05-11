@@ -11,7 +11,24 @@
         width: 80%;
     }
 
-    p {
-        font-size: 0.7em;
+    h2 {
+        text-align: center;
+        font-size: 48px;
+        font-weight: 700;
+        font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
     }
+
+    p {
+        font-size: 32px;
+        text-align: center;
+        font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+        @media (max-width: 768px) {  
+            font-size: 23px;
+        }
+    }
+}
+
+#plumbox {
+    text-align: center;
 }

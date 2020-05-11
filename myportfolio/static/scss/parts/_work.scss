@@ -1,0 +1,126 @@
+.vertical-wrapper.work {
+	margin-top: 10%;
+    margin-bottom: 30px;
+    position: initial;
+    transform: translate(0);
+    background-color: #003355;
+}
+
+.work {
+    line-height: initial;
+}
+
+.work {
+    h2{
+        font-size: 32px;
+        font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        text-align: left;
+        font-weight: 700;
+    }
+} 
+
+.thumb {
+    font-size: 0;
+
+    img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+
+.ttls {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    right: 50%;
+    width: 100%;
+    transform: translate(-50%,-50%);
+    transition: all 0.5s ease-in-out;
+    background-color: #00020F;
+    opacity: 0;
+    min-height: 100%;
+
+    @media (max-width: 768px) {  
+        opacity: 0.8;
+    }
+
+    @media (min-width: 769px) {  
+        &:hover {
+            opacity: 0.8;
+            transition: all 0.5s ease-in-out;
+        }
+    }
+
+}
+
+.ttls  {
+    h3{
+        font-size: 40px;
+        font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        margin-top: 35%;
+        text-align: center;
+
+        @media (max-width: 767px) {  
+            font-size: 20px;
+        }
+    }
+}
+
+.ttls {
+    p{
+        font-size: 32px;
+        text-align: center;
+
+        @media (max-width: 767px) {  
+            font-size: 12px;
+        }
+    }
+}
+
+.project {
+	box-sizing: border-box;
+	border: 5px solid #fff;
+	margin: 5% 0;
+	position: relative;
+}
+
+.project:last-child {
+	margin-bottom: 80px;
+}
+
+.view {
+    margin-right: 3%;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-end;
+
+    @media (max-width: 767px) {  
+        justify-content: center;
+    }
+
+     a {
+        box-sizing: border-box;
+        border: 3px solid #e89ac0;
+        text-decoration: none;
+        color: #fff;
+        font-size: 19px;
+        border-radius: 4%;
+        font-weight: bold;
+        padding: 5px 10px;
+
+        @media (max-width: 767px) {  
+            border: 2px solid #e89ac0;
+            width: 95%;
+        }
+     }
+}
+
+p.view {
+    margin-bottom: 0;
+    margin-right: 20px;
+
+    @media (max-width: 767px) {  
+        margin-right: 0;
+    }
+}
