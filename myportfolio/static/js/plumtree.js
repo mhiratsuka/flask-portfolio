@@ -6,7 +6,7 @@ var minHue, maxHue;
 
 
 function setup() {
-  var canvas = createCanvas(innerWidth -20, innerHeight -7);
+  var canvas = createCanvas(innerWidth, innerHeight -7);
   canvas.parent("plumbox");
 
   colorMode(HSB,360);
@@ -23,23 +23,12 @@ function draw() {
   image(bg, 0, 0); // display background  
   createTree();
   setHue();
-  // drawLeafs(10, 250, 0, 1);  // big smooth leafs
   drawLeafs(10, 300, 0, 1);  // big smooth leafs
   image(tree, 0, 0);  //display tree    
   drawLeafs(0, 20, 10, 40);  // small rigid leafs
   ground();  
 }
 
-// function mousePressed() {
- 
-//   redraw();
- 
-//   //delete leafs
-//   for (var i = leafs.length; i >= 0; i--) {
-//     leafs.pop();
-//   }
-  
-// }
 
 function createBackground() {
   bg = createGraphics(width, height);

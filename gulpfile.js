@@ -38,7 +38,7 @@ function browserSyncFunc(done) {
     browserSync.init({
         proxy: "127.0.0.1:5000",
         port: 8888,
-        host: '192.168.0.5'
+        host: '192.168.0.8'
       });
     done();
 }

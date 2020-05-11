@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="vertical-wrapper">
+<div class="vertical-wrapper create_post">
     <div>
         <h2>{{ title }}</h2>
     </div>
@@ -8,57 +8,56 @@
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset>
-                <legend class="border-bottom mb-4">{{ legend }}</legend>
                 <div class="form-group">
                     {{ form.worktitle.label(class="form-control-label")}}
                     {% if form.worktitle.errors %}
-                        {{ form.worktitle(class="form-control form-control-lg is-invalid")}}
+                        {{ form.worktitle(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.worktitle.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.worktitle(class="form-control form-control-lg")}}
+                        {{ form.worktitle(class="form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
                     {{ form.category.label(class="form-control-label")}}
                     {% if form.category.errors %}
-                        {{ form.category(class="form-control form-control-lg is-invalid")}}
+                        {{ form.category(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.category.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.category(class="form-control form-control-lg")}}
+                        {{ form.category(class="form-control form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
                     {{ form.content.label(class="form-control-label")}}
                     {% if form.content.errors %}
-                        {{ form.content(class="form-control form-control-lg is-invalid")}}
+                        {{ form.content(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.content.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.content(class="form-control form-control-lg")}}
+                        {{ form.content(class="form-control form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
                     {{ form.date_developed.label(class="form-control-label")}}
                     {% if form.date_developed.errors %}
-                        {{ form.date_developed(class="form-control form-control-lg is-invalid")}}
+                        {{ form.date_developed(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.date_developed.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.date_developed(class="form-control form-control-lg")}}
+                        {{ form.date_developed(class="form-control form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
@@ -73,40 +72,40 @@
                 <div class="form-group">
                     {{ form.workpicture_name.label(class="form-control-label")}}
                     {% if form.workpicture_name.errors %}
-                        {{ form.workpicture_name(class="form-control form-control-lg is-invalid")}}
+                        {{ form.workpicture_name(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.workpicture_name.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.workpicture_name(class="form-control form-control-lg")}}
+                        {{ form.workpicture_name(class="form-control form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
                     {{ form.site_link.label(class="form-control-label")}}
                     {% if form.site_link.errors %}
-                        {{ form.site_link(class="form-control form-control-lg is-invalid")}}
+                        {{ form.site_link(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.site_link.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.site_link(class="form-control form-control-lg")}}
+                        {{ form.site_link(class="form-control form-control")}}
                     {% endif %}
                 </div>
                 <div class="form-group">
                     {{ form.site_description.label(class="form-control-label")}}
                     {% if form.site_description.errors %}
-                        {{ form.site_description(class="form-control form-control-lg is-invalid")}}
+                        {{ form.site_description(class="form-control form-control is-invalid")}}
                         <div class="invalid-feedback">
                             {% for error in form.site_description.errors%}
                                 <span>{{ error }}</span>
                             {% endfor %}
                         </div>
                     {% else %}
-                        {{ form.site_description(class="form-control form-control-lg")}}
+                        {{ form.site_description(class="form-control form-control")}}
                     {% endif %}
                 </div>
             </fieldset>
@@ -122,14 +121,14 @@
             <div class="form-group">
                 {{ form.postpicture_name.label(class="form-control-label")}}
                 {% if form.postpicture_name.errors %}
-                    {{ form.postpicture_name(class="form-control form-control-lg is-invalid")}}
+                    {{ form.postpicture_name(class="form-control form-control is-invalid")}}
                     <div class="invalid-feedback">
                         {% for error in form.postpicture_name.errors%}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.postpicture_name(class="form-control form-control-lg")}}
+                    {{ form.postpicture_name(class="form-control form-control")}}
                 {% endif %}
             </div>
             <div class="form-group">
@@ -144,14 +143,14 @@
             <div class="form-group">
                 {{ form.postvideo_name.label(class="form-control-label")}}
                 {% if form.postvideo_name.errors %}
-                    {{ form.postvideo_name(class="form-control form-control-lg is-invalid")}}
+                    {{ form.postvideo_name(class="form-control form-control is-invalid")}}
                     <div class="invalid-feedback">
                         {% for error in form.postvideo_name.errors%}
                             <span>{{ error }}</span>
                         {% endfor %}
                     </div>
                 {% else %}
-                    {{ form.postvideo_name(class="form-control form-control-lg")}}
+                    {{ form.postvideo_name(class="form-control form-control")}}
                 {% endif %}
             </div>
             <div class="form-group">

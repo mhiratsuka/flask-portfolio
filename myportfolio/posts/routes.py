@@ -29,7 +29,7 @@ postpicture=postpicture, postpicture_name=form.postpicture_name.data, postvideo=
         db.session.commit()
         flash('Your post has been created', 'success')
         return redirect(url_for('main.work'))
-    return render_template('create_post.html', title='New Post', form=form, legend='New Post')
+    return render_template('create_post.html', title='New Post', form=form)
 
 
 @posts.route('/post/<int:post_id>')
@@ -46,16 +46,47 @@ def update_post(post_id):
         abort(403)
     form = PostForm()
     if form.validate_on_submit():
+
+        if form.workpicture.data:
+            workpicture = save_work_picture(form.workpicture.data)
+            post.workpicture = workpicture 
+
+        if form.postpicture.data:
+            postpicture = save_post_picture(form.postpicture.data)
+            post.postpicture = postpicture
+
+        if form.postvideo.data:
+            postvideo = save_post_video(form.postvideo.data)
+            post.postvideo = postvideo
+
         post.worktitle = form.worktitle.data 
         post.category = form.category.data 
         post.content = form.content.data 
+        post.date_developed = form.date_developed.data 
+        # post.workpicture = workpicture 
+        post.workpicture_name = form.workpicture_name.data 
+        post.site_link = form.site_link.data 
+        post.site_description = form.site_description.data 
+        # post.postpicture = form.postpicture.data 
+        post.postpicture_name = form.postpicture_name.data 
+        # post.postvideo = form.postvideo.data 
+        post.postvideo_name = form.postvideo_name.data 
         db.session.commit()
         flash('Your post has been updated', 'success')
         return redirect(url_for('posts.post', post_id=post.id))
     elif request.method == 'GET':
         form.worktitle.data = post.worktitle
-        form.category.data = post.skill
+        form.category.data = post.category
         form.content.data = post.content
+        form.date_developed.data = post.date_developed
+        form.workpicture.data = post.workpicture 
+        form.workpicture_name.data = post.workpicture_name
+        form.site_link.data = post.site_link
+        form.site_description.data = post.site_description
+        form.postpicture.data = post.postpicture
+        form.postpicture_name.data = post.postpicture_name
+        form.postvideo.data = post.postvideo
+        form.postvideo_name.data = post.postvideo_name
     return render_template('create_post.html', title='Update Post', form=form, legend='Update Post')
 
 
