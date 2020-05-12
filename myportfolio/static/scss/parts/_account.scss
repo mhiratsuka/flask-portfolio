@@ -1,0 +1,101 @@
+.vertical-wrapper.account {
+    @media (max-width: 767px) { 
+        width: 85%;
+    }
+}
+
+.account {
+    h2 {
+        font-size: 32px;
+        font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        font-weight: 700;
+        margin-bottom: 50px;
+    }
+}
+
+.account-wrapper {
+    display: flex;
+    margin-bottom: 40px;
+
+    @media (max-width: 767px) { 
+        flex-direction: column;
+        margin-bottom: 25px;
+    }
+}
+
+.account-img-wrapper {
+    width: 40%;
+
+    @media (max-width: 767px) { 
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+
+        @media (max-width: 767px) { 
+            max-width: 45%;
+        }
+    }
+}
+
+.account-detail {
+    margin-left: 40px;
+
+    @media (max-width: 767px) { 
+        margin-left: 0;
+    }
+}
+
+.account-detail {
+    h3 {
+        font-size: 28px;
+
+        @media (max-width: 767px) { 
+            font-size: 25px;
+        }
+    }
+}
+
+.account-detail {
+    p {
+        font-size: 22px;
+
+        @media (max-width: 767px) { 
+            font-size: 19px;
+        }
+    }
+}
+
+.account {
+    label {
+        font-size: 23px;
+
+        @media (max-width: 767px) { 
+            font-size: 20px;
+        }
+    }
+}
+
+.btn-container {
+    text-align: right;
+
+    @media (max-width: 767px) { 
+        text-align: center;
+    }
+}
+
+.btn-container {
+    .btn {
+        padding: 5px 35px;
+        font-size: 18px;
+
+        @media (max-width: 767px) { 
+            width: 100%;
+            font-size: 15px;
+        }
+    }
+}
