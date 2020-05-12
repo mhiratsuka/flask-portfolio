@@ -1033,6 +1033,11 @@ p.view {
   border-bottom: 2px solid #e89ac0;
 }
 
+.post_link a:hover {
+  color: #fff;
+  text-decoration: none;
+}
+
 .post_img img {
   max-width: 100%;
   text-align: center;
