@@ -1,36 +1,51 @@
 {% extends "layout.html" %}
 {% block content %}
-<article class="media content-section">
-    <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/profile_imgs/' + post.author.image_file) }}">
-    <div class="media-body">
-    <div class="article-metadata">
-        <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username)}}">{{ post.author.username }}</a>
-        <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
-        {% if post.author == current_user %}
-            <div>
-                <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('posts.update_post', post_id=post.id)}}">Update</a>
-                <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+<!-- <article class="media content-section"> -->
+    <!-- <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/profile_imgs/' + post.author.image_file) }}"> -->
+    <div class="vertical-wrapper post">
+        <!-- <div class="article-metadata"> -->
+            <!-- <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username)}}">{{ post.author.username }}</a>
+            <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small> -->
+            {% if post.author == current_user %}
+                <div>
+                    <a class="btn btn-secondary btn-sm mt-1 mb-1" href="{{url_for('posts.update_post', post_id=post.id)}}">Update</a>
+                    <button type="button" class="btn btn-danger btn-sm m-1" data-toggle="modal" data-target="#deleteModal">Delete</button>
+                </div>
+            {% endif %}
+        <!-- </div> -->
+        <h2>{{ post.worktitle }}</h2>
+        <div class="post_content_wrapper">
+            <div  class="post_content">
+                <p>{{ post.content }}</p>
+                {% if post.site_link %}
+                    <div class="post_link">
+                        <a href="{{ post.site_link }}" target="_blank">
+                            {% if post.site_description %}
+                                <p><span>{{ post.site_description }}</span></p>
+                            {% endif %}
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+            <div class="post_detail">
+                <h3>Date</h3>
+                <p>{{ post.date_developed }}</p>
+                <h3>Cagegory</h3>
+                <p>{{ post.category }}</p>
+            </div>
+        </div>
+        {% if post.postpicture %}
+            <div class="post_img">
+                <img src="{{ url_for('static', filename='images/post_imgs/' + post.postpicture) }}" alt="{{ post.postpicture_name }}">
+            </div>
+        {% endif %}
+        {% if post.postvideo %}
+            <div class="post_video">
+                <video controls src="{{ url_for('static', filename='videos/post_mp4/' + post.postvideo) }}" alt="{{ post.postvideo_name }}" type="video/mp4"></video>
             </div>
         {% endif %}
     </div>
-    <h2 class="article-title">{{ post.worktitle }}</h2>
-    <p class="article-content">{{ post.category }}</p>
-    <p class="article-content">{{ post.content }}</p>
-    <p class="article-content">{{ post.date_developed }}</p>
-    {% if post.site_link %}
-        <p class="article-content">{{ post.site_link }}</p>
-    {% endif %}
-    {% if post.site_description %}
-        <p class="article-content">{{ post.site_description }}</p>
-    {% endif %}
-    {% if post.postpicture %}
-        <img class="rounded-circle article-img" src="{{ url_for('static', filename='images/post_imgs/' + post.postpicture) }}" alt="{{ post.postpicture_name }}">
-    {% endif %}
-    {% if post.postvideo %}
-        <video controls src="{{ url_for('static', filename='videos/post_mp4/' + post.postvideo) }}" alt="{{ post.postvideo_name }}" type="video/mp4"></video>
-    {% endif %}
-    </div>
-</article>
+<!-- </article> -->
 <!-- Modal -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
     <div class="modal-dialog" role="document">

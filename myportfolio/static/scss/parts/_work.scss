@@ -1,9 +1,13 @@
 .vertical-wrapper.work {
-	margin-top: 10%;
+	margin-top: 140px;
     margin-bottom: 30px;
     position: initial;
     transform: translate(0);
     background-color: #003355;
+
+    @media (max-width: 767px) { 
+        margin-top: 100px;
+    }
 }
 
 .work {

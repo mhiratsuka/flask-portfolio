@@ -13,15 +13,8 @@
                         <a class="mr-2" href="{{ url_for('users.user_posts', username=post.author.username)}}">{{ post.author.username }}</a>
                         <small class="text-muted">{{ post.date_posted.strftime('%Y-%m-%d') }}</small>
                     </div> -->
-                    <!-- <h3><a class="article-title" href="{{ url_for('posts.post', post_id=post.id)}}">{{ post.worktitle }}</a></h2> -->
                     <h3>{{ post.worktitle }}</h3>
                     <p>{{ post.category }}</p>
-                    <!-- {% if post.site_link %}
-                        <p class="article-content">{{ post.site_link }}</p>
-                    {% endif %}
-                    {% if post.site_description %}
-                        <p class="article-content">{{ post.site_description }}</p>
-                    {% endif %} -->
                     <p class="view"><a href="{{ url_for('posts.post', post_id=post.id)}}">View Project</a></p>
                 </div>
             </div>

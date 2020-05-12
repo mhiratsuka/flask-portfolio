@@ -1,0 +1,135 @@
+.vertical-wrapper.post {
+    top: 67%;
+    height: 100%;
+    text-align: left;
+    max-width: 100%;
+    width: 80%;
+
+    @media (max-width: 767px) {  
+        width: 85%;
+    }
+}
+
+.post {
+    h2{
+        font-size: 32px;
+        font-weight: 700;
+        font-family: 'Bitter', Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+        text-align: left;
+        margin-bottom: 20px;
+
+
+        @media (max-width: 767px) {  
+            font-size: 24px;
+        }
+    }
+}
+
+
+.post_content_wrapper {
+    display: flex;
+
+    @media (max-width: 767px) {  
+        flex-direction: column;
+    }
+}
+
+.post_content {
+    width: 60%;
+    margin-right: 30px;
+
+    @media (max-width: 767px) {  
+        width: 100%;
+        margin-right: 0;
+    }
+}
+
+.post_content {
+    p {
+        font-size: 22px;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+        @media (max-width: 1024px) {  
+            font-size: 20px;
+        }
+
+        @media (max-width: 767px) {  
+            font-size: 15px;
+        }
+    }
+} 
+
+.post_detail {
+    width: 40%;
+    margin-bottom: 50px;
+    line-height: initial;
+
+    @media (max-width: 767px) {  
+        width: 100%;
+        margin-bottom: 35px;
+    }
+}
+
+.post_detail {
+    h3 {
+        font-size: 25px;
+        font-weight: 700;
+
+        @media (max-width: 1024px) {  
+            font-size: 23px;
+        }
+
+        @media (max-width: 767px) {  
+            font-size: 20px;
+        }
+    }
+}
+
+.post_detail {
+    p {
+        font-size: 20px;
+        font-family: Baskerville, "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+
+        @media (max-width: 1024px) {  
+            font-size: 18px;
+        }
+
+        @media (max-width: 767px) {  
+            font-size: 15px;
+        }
+    }
+} 
+
+.post_link {
+    p {
+        text-align: right;
+    }
+
+    span {
+        border-bottom: 2px solid #e89ac0;
+    }
+}
+	
+
+.post_img {
+    img{
+        max-width: 100%;
+        text-align: center;
+        height: auto;
+    }    
+} 
+
+
+.post_video {
+    video{
+        width: 100%;
+        height: auto;
+    }
+}
+
+
+.post {
+    [href*="github"]:before {
+        content: none;
+      }
+}
