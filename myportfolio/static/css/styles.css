@@ -721,7 +721,7 @@ h1 img {
 .vertical-wrapper.work {
   margin-top: 140px;
   margin-bottom: 30px;
-  position: initial;
+  position: static;
   -webkit-transform: translate(0);
           transform: translate(0);
   background-color: #003355;
@@ -873,13 +873,16 @@ p.view {
   margin-top: 10%;
   margin-bottom: 30px;
   background-color: #003355;
-  position: initial;
+  position: static;
   -webkit-transform: translate(0);
           transform: translate(0);
 }
 
 .create_post h2 {
   text-align: center;
+  font-size: 32px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 700;
 }
 
 .create_post label {
