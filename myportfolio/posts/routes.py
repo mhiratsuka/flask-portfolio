@@ -62,14 +62,11 @@ def update_post(post_id):
         post.worktitle = form.worktitle.data 
         post.category = form.category.data 
         post.content = form.content.data 
-        post.date_developed = form.date_developed.data 
-        # post.workpicture = workpicture 
+        post.date_developed = form.date_developed.data
         post.workpicture_name = form.workpicture_name.data 
         post.site_link = form.site_link.data 
         post.site_description = form.site_description.data 
-        # post.postpicture = form.postpicture.data 
-        post.postpicture_name = form.postpicture_name.data 
-        # post.postvideo = form.postvideo.data 
+        post.postpicture_name = form.postpicture_name.data
         post.postvideo_name = form.postvideo_name.data 
         db.session.commit()
         flash('Your post has been updated', 'success')

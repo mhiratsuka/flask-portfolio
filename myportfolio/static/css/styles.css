@@ -48,6 +48,40 @@ main {
   z-index: 2;
 }
 
+.vertical-wrapper.error {
+  text-align: center;
+}
+
+@media (max-width: 767px) {
+  .vertical-wrapper.error {
+    width: 95%;
+  }
+}
+
+.error h2 {
+  font-size: 40px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .error h2 {
+    font-size: 30px;
+  }
+}
+
+.error p {
+  font-size: 22px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+@media (max-width: 767px) {
+  .error p {
+    font-size: 15px;
+  }
+}
+
 footer {
   text-align: center;
   position: fixed;

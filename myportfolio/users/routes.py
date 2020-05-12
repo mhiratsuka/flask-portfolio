@@ -10,21 +10,6 @@ from myportfolio.users.utils import save_picture, send_reset_email
 users = Blueprint('users', __name__)
 
 
-# @users.route('/register', methods=['GET', 'POST'])
-# def register():
-#     if current_user.is_authenticated:
-#         return redirect(url_for('main.work'))
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         hashed_password = bcrypt.generate_password_hash(form.password.data).decode('utf-8')
-#         user = User(username=form.username.data, email=form.email.data, password=hashed_password)
-#         db.session.add(user)
-#         db.session.commit()
-#         flash('Your account has been created! You are now able to log in', 'success')
-#         return redirect(url_for('main.work'))
-#     return render_template('register.html', title='Register', form=form)
-
-
 @users.route('/login', methods=['GET', 'POST'])
 def login():
     if current_user.is_authenticated:
@@ -66,16 +51,6 @@ def account():
         image_file = url_for('static', filename='images/profile_imgs/' + current_user.image_file)
     
     return render_template('account.html', title='Account', image_file=image_file, form=form)
-
-@users.route('/user/<string:username>')
-def user_posts(username):
-    page =request.args.get('page', 1, type=int)
-    user = User.query.filter_by(username=username).first_or_404()
-    posts = Post.query.filter_by(author=user)\
-        .order_by(Post.date_posted.desc())\
-        .paginate(page=page, per_page=5)
-    return render_template('user_posts.html', posts=posts, user=user)
-
 
 @users.route('/reset_password', methods=['GET', 'POST'])
 def reset_request():
