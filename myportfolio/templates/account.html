@@ -1,21 +1,22 @@
 {% extends "layout.html" %}
 {% block content %}
-<div class="vertical-wrapper">
+<div class="vertical-wrapper account">
     <div>
         <h2>{{ title }}</h2>
     </div>
-    <div class="media">
-        <img class="rounded-circle account-img" src="{{ image_file }}">
-        <div class="media-body">
-        <h3 class="account-heading">{{ current_user.username }}</h2>
-        <p class="text-secondary">{{ current_user.email }}</p>
+    <div class="account-wrapper">
+        <div class="account-img-wrapper">
+            <img class="rounded-circle" src="{{ image_file }}">
+        </div>
+        <div class="account-detail">
+            <h3>{{ current_user.username }}</h2>
+            <p>{{ current_user.email }}</p>
         </div>
     </div>
     <div>
         <form method="POST" action="" enctype="multipart/form-data">
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
-                <legend class="border-bottom mb-4">Account Info</legend>
                 <div class="form-group">
                     {{ form.username.label(class="form-control-label")}}
 
@@ -53,7 +54,7 @@
                     {% endif %}
                 </div>
             </fieldset>
-            <div class="form-group">
+            <div class="form-group btn-container">
                 {{ form.submit(class="btn btn-outline-info")}}
             </div>
         </form>

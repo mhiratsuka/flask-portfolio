@@ -387,6 +387,125 @@ h1 img {
   }
 }
 
+@media (max-width: 767px) {
+  .vertical-wrapper.account {
+    width: 85%;
+  }
+}
+
+.account h2 {
+  font-size: 32px;
+  font-family: "Bitter", "Baskerville", "Baskerville Old Face", "Hoefler Text", Garamond, "Times New Roman", serif;
+  font-weight: 700;
+  margin-bottom: 50px;
+}
+
+.account-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 40px;
+}
+
+@media (max-width: 767px) {
+  .account-wrapper {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-bottom: 25px;
+  }
+}
+
+.account-img-wrapper {
+  width: 40%;
+}
+
+@media (max-width: 767px) {
+  .account-img-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    width: 100%;
+  }
+}
+
+.account-img-wrapper img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 767px) {
+  .account-img-wrapper img {
+    max-width: 45%;
+  }
+}
+
+.account-detail {
+  margin-left: 40px;
+}
+
+@media (max-width: 767px) {
+  .account-detail {
+    margin-left: 0;
+  }
+}
+
+.account-detail h3 {
+  font-size: 28px;
+}
+
+@media (max-width: 767px) {
+  .account-detail h3 {
+    font-size: 25px;
+  }
+}
+
+.account-detail p {
+  font-size: 22px;
+}
+
+@media (max-width: 767px) {
+  .account-detail p {
+    font-size: 19px;
+  }
+}
+
+.account label {
+  font-size: 23px;
+}
+
+@media (max-width: 767px) {
+  .account label {
+    font-size: 20px;
+  }
+}
+
+.btn-container {
+  text-align: right;
+}
+
+@media (max-width: 767px) {
+  .btn-container {
+    text-align: center;
+  }
+}
+
+.btn-container .btn {
+  padding: 5px 35px;
+  font-size: 18px;
+}
+
+@media (max-width: 767px) {
+  .btn-container .btn {
+    width: 100%;
+    font-size: 15px;
+  }
+}
+
 .contact .vertical-wrapper {
   top: 45%;
 }
