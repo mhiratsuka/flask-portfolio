@@ -1,6 +1,13 @@
 .vertical-wrapper.account {
+    margin-top: 100px;
+    margin-bottom: 30px;
+    position: static;
+    transform: translate(0);
+    background-color: #003355;
+
     @media (max-width: 767px) { 
         width: 85%;
+        margin-top: 80px;
     }
 }
 

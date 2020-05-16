@@ -421,9 +421,19 @@ h1 img {
   }
 }
 
+.vertical-wrapper.account {
+  margin-top: 100px;
+  margin-bottom: 30px;
+  position: static;
+  -webkit-transform: translate(0);
+          transform: translate(0);
+  background-color: #003355;
+}
+
 @media (max-width: 767px) {
   .vertical-wrapper.account {
     width: 85%;
+    margin-top: 80px;
   }
 }
 
