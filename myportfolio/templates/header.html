@@ -9,9 +9,10 @@
         <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
           
         <ul class="nav">
-            <li class="work" ontouchstart=""><a href="{{url_for('main.work')}}">Work</a></li>
-            <li class="about" ontouchstart=""><a href="{{url_for('main.about')}}">About</a></li>
-            <li class="contact" ontouchstart=""><a href="{{url_for('main.contact')}}">Contact</a></li>
+            <li ontouchstart=""><a href="{{url_for('main.work')}}">Work</a></li>
+            <li ontouchstart=""><a href="{{url_for('main.about')}}">About</a></li>
+            <li ontouchstart=""><a href="https://medium.com/@mhiratsuka">Blog</a></li>
+            <li  ontouchstart=""><a href="{{url_for('main.contact')}}">Contact</a></li>
             {%if current_user.is_authenticated %}
                 <li class="login" ontouchstart=""><a href="{{url_for('posts.new_post')}}">New Post</a></li>
                 <li class="login" ontouchstart=""><a href="{{url_for('users.account')}}">Account</a></li>
