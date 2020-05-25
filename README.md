@@ -10,6 +10,7 @@ Revised a portfolio by using modern techlonogy. This time I use Python to handle
 * AWS(ec2)
 * NGINX
 * Supervisor
+* Unicorn
 
 ## Future Developoment
 Code FE with React
